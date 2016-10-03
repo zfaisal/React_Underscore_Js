@@ -17,16 +17,27 @@ class Arrays extends Component {
     this.setState({arr: this.state.arr, myObj: this.state.myObj})
     // console.log(this.state.arr, this.state.myObj)
 
-    this._first()
+    this._initial()
   }
 
-  // get the first element of the array or the first n elements of the array
+  _initial() {
+    var arr = [1,2,3,4,5,6,7,8,9,10]
+    var result = _.initial(arr, 2)
+    console.log('all elements except the last one',result)
+  }
+
+  // get the first element of the array
+  _take() {
+    var result =  _.take(this.state.arr,3)
+    console.log('first n element', result)
+
+  }
+
+  // get the first element of the array
   _first() {
     var result =  _.first(this.state.arr)
     console.log('first element', result)
 
-     result =  _.first(this.state.arr, 3)
-    console.log('first n elements', result)
   }
 
   render() {
